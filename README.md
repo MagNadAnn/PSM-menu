@@ -23,10 +23,10 @@ Bienvenue dans l'édition du menu PSM pour "portable splash menu"
 ### 2.1. La position du menu
 
 Il est réglable en modifiant les classes de la balise :
-    <nav class="PSM_splash-menu">
+    ```<nav class="PSM_splash-menu">```
 
 Elle est repérable dans le fichier menu.html grâce au commentaire :
-<!-- START positionnement du menu -->
+`<!-- START positionnement du menu -->`
 
 On y ajoute les classe suivantes :
 - PSM_top OU PSM_bottom
@@ -37,10 +37,10 @@ Le CSS prend le relai et ancrera automatiquement le menu en bas ou en haut, à g
 ### 2.2. Le logo
 
 Il est modifiable en modifiant la source et le contenu alternatif de la balise :
-    <img class="PSM_logo-menu" src="logo.png" alt="Le projet CEC" />
+    ```<img class="PSM_logo-menu" src="logo.png" alt="Le projet CEC" />```
 
 Elle est repérable dans le fichier menu.html grâce au commentaire :
-<!-- START logo -->
+`<!-- START logo -->`
 
 Etapes :
 1. Créer un fichier image intitulé logo.png ;
@@ -50,20 +50,20 @@ Etapes :
 ### 2.3. La liste de liens
 
 Il est modifiable en supprimant et ajoutant des balises :
-    <li class="PSM_app-link-item">
+    ```<li class="PSM_app-link-item">
         <a class="PSM_app-link" href="https://votre-url.com">Titre de votre lien</a>
-    </li>
+    </li>```
 
 dans la balise :
-    <ul  class="PSM_app-link-list" title="les applications du projet CEC">
+   ```<ul  class="PSM_app-link-list" title="les applications du projet CEC">```
 
 La liste de lien est repérable dans le fichier menu.html grâce au commentaire :
-<!-- START liens vers les applis -->
+`<!-- START liens vers les applis -->`
 
 Etapes :
-1. Modifier l'attribut title de la balise <ul  class="PSM_app-link-list"> afin qu'il décrive correctement l'ensemble des liens de votre menu ;
-2. Supprimer et ajouter des balises <li class="PSM_app-link-item">...</li> ;
-3. Modifier le contenu et l'attribut href de chacune des balises <a class="PSM_app-link"> de votre liste.
+1. Modifier l'attribut title de la balise `<ul  class="PSM_app-link-list">` afin qu'il décrive correctement l'ensemble des liens de votre menu ;
+2. Supprimer et ajouter des balises `<li class="PSM_app-link-item">...</li>` ;
+3. Modifier le contenu et l'attribut href de chacune des balises `<a class="PSM_app-link">` de votre liste.
 
 ## 3. Licence
 
