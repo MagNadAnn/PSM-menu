@@ -1,0 +1,254 @@
+/* MENU STYLES */
+.PSM_splash-menu {
+  position: fixed;
+  z-index: 1;
+  font-size: 1em;
+  line-height: 1.4em;
+  --primary-color: rgba(13, 110, 139, 0.75);
+  --overlay-color: rgba(24, 39, 51 , 0.85);
+  --menu-speed: 0.75s;
+  font-family: Arial, sans-serif;
+}
+
+.PSM_left {
+  left: 0;
+}
+
+.PSM_right {
+  right: 0;
+}
+
+.PSM_top {
+  top: 0;
+}
+
+.PSM_bottom {
+  bottom: 0;
+}
+
+.PSM_toggler {
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  width: 5em;
+  height: 5em;
+  box-sizing: border-box;
+  opacity: 0;
+}
+
+.PSM_hamburger {
+  position: absolute;
+  z-index: 1;
+  width: 4em;
+  height: 4em;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--primary-color);
+}
+
+.PSM_left > .PSM_toggler,
+.PSM_left > .PSM_hamburger {
+  left: 0;
+}
+
+.PSM_right > .PSM_toggler,
+.PSM_right > .PSM_hamburger {
+  right: 0;
+}
+
+.PSM_top > .PSM_toggler,
+.PSM_top > .PSM_hamburger {
+  top: 0;
+}
+
+.PSM_bottom > .PSM_toggler,
+.PSM_bottom > .PSM_hamburger {
+  bottom: 0;
+}
+
+/* Hamburger Line */
+.PSM_hamburger > div {
+  position: relative;
+  flex: none;
+  width: 100%;
+  height: 0.125em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  background: #fff;
+}
+
+/* Hamburger Lines - Top & Bottom */
+.PSM_hamburger > div::before,
+.PSM_hamburger > div::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  top: -0.6em;
+  width: 100%;
+  height: 0.125em;
+  background: inherit;
+}
+
+/* Moves Line Down */
+.PSM_hamburger > div::after {
+  top: 0.6em;
+}
+
+/* Toggler Animation */
+.PSM_toggler:checked + .PSM_hamburger > .PSM_hamburger-content {
+  transform: rotate(135deg);
+}
+
+/* Turns Lines Into X */
+.PSM_toggler:checked + .PSM_hamburger > .PSM_hamburger-content:before,
+.PSM_toggler:checked + .PSM_hamburger > .PSM_hamburger-content:after {
+  top: 0;
+  transform: rotate(90deg);
+}
+
+/* Rotate On Hover When Checked */
+.PSM_toggler:checked:hover + .PSM_hamburger > .PSM_hamburger-content {
+  transform: rotate(225deg);
+}
+
+/* Show Menu */
+.PSM_toggler:checked ~ .PSM_splash-wrap {
+  visibility: visible;
+}
+
+.PSM_toggler:checked ~ .PSM_splash-wrap > .PSM_splash {
+  transform: scale(1);
+  transition-duration: var(--menu-speed);
+}
+
+.PSM_toggler:checked ~ .PSM_splash-wrap > .PSM_splash > .PSM_splash-content {
+  opacity: 1;
+  transition:  opacity 0.4s ease 0.4s;
+}
+
+.PSM_splash-wrap {
+  position: fixed;
+  top: 0;
+  height: 100%;
+  visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.PSM_left > .PSM_splash-wrap {
+  left: 0;
+}
+
+.PSM_right > .PSM_splash-wrap {
+  right: 0;
+}
+
+@media (min-width:728px) {
+  .PSM_splash-wrap {
+    width: 20em;
+  }
+}
+
+@media (max-width:727px) {
+  .PSM_splash-wrap {
+    width: 100%;
+  }
+}
+
+.PSM_splash {
+  background: var(--overlay-color);
+  display: flex;
+  flex: none;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.4s ease;
+}
+
+@media (min-width:728px) {
+  .PSM_splash {
+    width: 100%;
+    height: 100%;
+  }
+
+  .PSM_left > .PSM_splash-wrap > .PSM_splash {
+    left: 0;
+    transform: translate(-100%, 0);
+  }
+  
+  .PSM_right > .PSM_splash-wrap > .PSM_splash {
+    right: 0;
+    transform: translate(100%, 0);
+  }
+
+}
+
+@media (max-width:727px) {
+  .PSM_splash {
+    width: 200vw;
+    height: 200vw;
+    transform: scale(0);
+    border-radius: 50%;
+  }
+}
+
+.PSM_splash-content {
+  max-height: 100vh;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+@media (max-width:727px) {
+  .PSM_splash-content {
+    text-align: center;
+  }
+}
+
+@media (min-width:500px) {
+  .PSM_splash-content {
+    max-width: 100vw;
+  }
+}
+
+@media (max-width:499px) {
+  .PSM_splash-content {
+    width: 100vw;
+    padding: 0 4em;
+    box-sizing: border-box;
+  }
+}
+
+.PSM_logo-menu {
+  display: inline-block;
+  max-width: calc( 80% - 2em );
+  box-sizing: border-box;
+  margin: 1em 1em 0;
+  padding: 0.35em;
+}
+
+.PSM_app-link-list {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0 1em 1em;
+}
+
+.PSM_app-link-item {
+  list-style: none;
+  color: #fff;
+}
+
+.PSM_app-link {
+  color: inherit;
+  display: inline-block;
+  padding: 0.35em;
+  text-decoration: none;
+  transition: color 0.4s ease;
+}
